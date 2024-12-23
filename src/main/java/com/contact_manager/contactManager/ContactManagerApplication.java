@@ -1,4 +1,4 @@
-package com.contact_manager.contactMananer;
+package com.contact_manager.contactManager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
