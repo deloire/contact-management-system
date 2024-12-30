@@ -17,7 +17,7 @@ public class UserController {
     UserService userService;
 
     @PostMapping
-    public ResponseEntity registration(@RequestBody UserEntity user) {
+    public ResponseEntity<String> registration(@RequestBody UserEntity user) {
         try {
             userService.registration(user);
             return  ResponseEntity.ok("User saved!");
@@ -37,10 +37,10 @@ public class UserController {
         }
     }
 
-    @GetMapping
-    public ResponseEntity getOneUser(@RequestParam Long id) {
+    @GetMapping("/{username}")
+    public ResponseEntity getOneUser(@PathVariable String username) {
         try {
-            return ResponseEntity.ok(userService.getOneUser(id));
+            return ResponseEntity.ok(userService.getOneUser(username));
         } catch (UserNotFoundException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
@@ -49,7 +49,7 @@ public class UserController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity deleteUser(@RequestParam Long id) {
+    public ResponseEntity<String> deleteUser(@RequestParam Long id) {
         try {
             return ResponseEntity.ok(userService.deleteUser(id));
         } catch (Exception e) {

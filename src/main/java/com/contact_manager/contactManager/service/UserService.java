@@ -25,8 +25,8 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public User getOneUser(Long id) throws UserNotFoundException {
-        UserEntity user = userRepo.findById(id).get();
+    public User getOneUser(String username) throws UserNotFoundException {
+        UserEntity user = userRepo.findByUsername(username);
         if (user == null) {
             throw new UserNotFoundException("User not found!");
         }
