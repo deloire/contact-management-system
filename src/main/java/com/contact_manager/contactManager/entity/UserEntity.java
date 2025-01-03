@@ -3,6 +3,8 @@ package com.contact_manager.contactManager.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class UserEntity {
@@ -13,7 +15,18 @@ public class UserEntity {
     private String username;
     private String password;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<ContactEntity> contacts;
+
     public UserEntity() {
+    }
+
+    public List<ContactEntity> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<ContactEntity> contacts) {
+        this.contacts = contacts;
     }
 
     public Long getId() {
