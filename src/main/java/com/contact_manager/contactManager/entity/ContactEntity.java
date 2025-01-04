@@ -15,7 +15,7 @@ public class ContactEntity {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
     public ContactEntity() {
