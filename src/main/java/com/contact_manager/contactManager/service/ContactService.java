@@ -5,7 +5,6 @@ import com.contact_manager.contactManager.entity.ContactEntity;
 import com.contact_manager.contactManager.entity.UserEntity;
 import com.contact_manager.contactManager.exceptions.UserNotFoundException;
 import com.contact_manager.contactManager.model.Contact;
-import com.contact_manager.contactManager.model.User;
 import com.contact_manager.contactManager.repository.ContactRepo;
 import com.contact_manager.contactManager.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;

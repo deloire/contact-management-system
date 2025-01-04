@@ -6,15 +6,25 @@ public class User {
 
     private Long id;
     private String username;
+    private long countContacts;
 
-    public static User toModel(UserEntity user) {
+    public static User toModel(UserEntity user, long countContacts) {
         User model = new User();
         model.setId(user.getId());
         model.setUsername(user.getUsername());
+        model.setCountContacts(countContacts);
         return model;
     }
 
     public User() {
+    }
+
+    public long getCountContacts() {
+        return countContacts;
+    }
+
+    public void setCountContacts(long countContacts) {
+        this.countContacts = countContacts;
     }
 
     public Long getId() {

@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface ContactRepo extends CrudRepository<ContactEntity, Long> {
     List<ContactEntity> findByUser(UserEntity user);
+    long countByUser(UserEntity user);
 
 }
