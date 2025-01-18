@@ -21,9 +21,10 @@ User Contact Management API is a RESTful web service that allows users to manage
 
 1. Clone the repository
 2. Navigate to your project directory and put pom.xml and other files there
-3. Build the project using Maven
-4. Run the application
-5. The application will start on `http://localhost:8080`.
+3. Connect the database
+4. Build the project using Maven
+5. Run the application
+6. The application will start on `http://localhost:8080`.
 
 ### API Endpoints
 
